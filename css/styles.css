@@ -1,0 +1,216 @@
+/*// Стилизація проєкта -*/
+/*// index.html - всі блоки з user - по 2 в рядок. кнопки/аосилвння розташувати під інформацією про user.*/
+/*//     user-details.html - блок з інфою про user зверху сторінки. Кнопка нижчє, на 90% ширини сторінки, по центру.*/
+/*//     блоки з короткою іфною про post - в ряд по 5 .*/
+/*//     post-details.html - блок з інфою про пост зверху. Коментарі - по 4 в ряд.*/
+/*//     Всі елементи котрі характеризують users, posts, comments візуалізувати, так, щоб було видно що це блоки (дати фон. марджини і тд)*/
+
+/*// Загальні */
+
+body {
+    margin: 0;
+    padding: 0 15px;
+    font-family: 'Martel', serif;
+    background-image: url("../img/1678771024_sneg-top-p-fon-chernii-s-dimkoi-vkontakte-9.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1{
+    text-align: center;
+    font-weight: 700;
+    color: #e0f2f0;
+    transition-duration: 0.5s;
+}
+
+h1:hover {
+    transform: scale3d(1.5, 1.5, 2);
+}
+
+.btn {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+.btn > button {
+    padding: 11px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 5px rgba(26,58,55,0.64);
+    border: none;
+    background-color: #e0f2f0;
+    cursor: pointer;
+    transition: 0.8s ease;
+    color: black;
+}
+
+.btn > button:hover{
+    color: white;
+    background-color: #22736e;
+    box-shadow: 0 0 15px 5px rgba(255,255,255,1);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 100%;
+    background: rgba(255,255,255,1);
+}
+
+/*// Сторінка з юзерами */
+
+#allUsers {
+    width: 97vw;
+    padding: 25px 0;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.userDiv {
+    width: 50%;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #e0f2f0;
+    background-color: lightseagreen;
+}
+
+.userDiv > button {
+    padding: 11px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 5px rgba(26,58,55,0.64);
+    border: none;
+    background-color: #e0f2f0;
+    cursor: pointer;
+    transition: 0.8s ease;
+    color: black;
+}
+
+.userDiv > button:hover{
+    color: white;
+    background-color: #22736e;
+    box-shadow: 0 0 15px 5px rgba(255,255,255,1);
+}
+
+.userDivName {
+    margin-bottom: 15px;
+}
+
+/*// Сторінка з інфою юзера */
+
+.userInfo {
+    width: 97vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info > ul {
+    border: 1px solid #e0f2f0;
+}
+
+.btnPosts {
+    display: flex;
+    justify-content: center;
+}
+
+.btnPosts > button {
+    width: 90%;
+    margin: 20px 0;
+    padding: 11px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 5px rgba(26,58,55,0.64);
+    border: none;
+    background-color: #e0f2f0;
+    cursor: pointer;
+    transition: 0.8s ease;
+    color: black;
+}
+
+.btnPosts > button:hover{
+    color: white;
+    background-color: #22736e;
+    box-shadow: 0 0 15px 5px rgba(255,255,255,1);
+}
+
+/*// Сторінка з інфою юзера та його постами */
+
+#postTitle{
+    display: flex;
+    justify-content: center;
+}
+
+#postTitle > ol{
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    list-style-position: inside;
+    padding: 0;
+    font-size: 14px;
+}
+
+#postTitle > ol > li {
+    padding: 5px;
+    border: 1px solid #e0f2f0;
+    background-color: lightseagreen;
+
+}
+
+#postTitle > ol > li:hover {
+    background-color: #22736e;
+    box-shadow: 0 0 15px 5px rgba(255,255,255,1);
+    transform: scale3d(1.1, 1.1, 1.5);
+    transition: 0.8s ease;
+}
+
+#postTitle > ol > li > a{
+    color: white;
+}
+
+/*// Сторінка з постом та коментами до нього */
+
+.postInfo {
+    padding: 5px;
+    border: 1px solid #e0f2f0;
+}
+
+#comments {
+    display: flex;
+    width: 97vw;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 7%;
+}
+
+#comments > ul {
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 5%;
+    grid-row-gap: 10%;
+    list-style-position: inside;
+    list-style-type: none;
+    padding: 25px 0;
+}
+
+#comments > ul > li {
+    padding: 5px;
+    background-color: #22736e;
+    box-shadow: 0 0 15px 5px rgba(255,255,255,1);
+    transform: scale3d(1.1, 1.1, 1.5);
+    transition: 0.8s ease;
+}
+
+#comments > ul >li >ul {
+    padding: 0;
+    list-style-position: inside;
+}
+
